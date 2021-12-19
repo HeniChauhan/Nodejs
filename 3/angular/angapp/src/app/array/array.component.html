@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="card card-body">
+    <b> Array of Colors</b>
+      <ul>
+         <li *ngFor="let i of colors">
+          {{i}}
+         </li>
+      </ul>
+      <b> Combo of Colors</b><br>
+    <div class="row">
+       <div class="col-md-2">
+            <select class="form-control" (change)="update($event)">
+                <option> Select Color </option>
+                 <option *ngFor="let j of colors" value={{j}}>{{j}}</option>
+            </select>
+        </div>
+       <div class="col-md-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon3">You Selected:</span>
+            </div>
+            <input class="form-control" type="text" value={{selected}} disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
